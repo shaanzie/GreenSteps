@@ -20,17 +20,21 @@
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+
 </head>
 
-<body class=" ">
-  <div class="wrapper ">
+
+
+<body>
+    
+  <div class="wrapper " id="wrapper">
     <div class="sidebar">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="./dashboard.html">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
@@ -48,7 +52,7 @@
               <p>Notifications</p>
             </a>
           </li>
-          <li>
+          <li class="active">
                 <a href="./feedback.html">
                   <i class="tim-icons icon-satisfied"></i>
                   <p>Feedback to BMTC</p>
@@ -205,12 +209,6 @@
                         <input type="text" class="form-control" placeholder="City">
                       </div>
                     </div>
-                    <div class="col-md-4 px-md-1">
-                      <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" placeholder="Country">
-                      </div>
-                    </div>
                   </div>
                   <div class="col-md-12 px-md-1">
                         <div class="form-group">
@@ -218,13 +216,14 @@
                             <textarea class="form-control" placeholder="Enter problem"></textarea>
                         </div>
                     </div>
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-fill btn-primary">Submit</button>
+                  </div>
+                <!-- </div> -->
+              </div>
                 </form>
-              </div>
-              <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Save</button>
-              </div>
-            <!-- </div> -->
-          </div>
+              
           <!-- <div class="col-md-4">
             <div class="card  card-user">
               <div class="card-body ">
