@@ -10,6 +10,15 @@
     Green Steps
   </title>
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+<script src="add-user.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -21,24 +30,11 @@
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 </head>
 
-<script>
-    var myVar;
-    
-    function myFunction() {
-      myVar = setTimeout(showPage, 3000);
-    }
-    
-    function showPage() {
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("wrapper").style.display = "block";
-    }
-    </script>
-
-<body  onload="myFunction()" style="margin:0;">
-    <div id="loader"></div>
-  <div class="wrapper " id="wrapper">
+<body >
+    <div class="wrapper " id="wrapper">
       
     <div class="sidebar">
       <!--
@@ -178,7 +174,51 @@
       <div>
           <center><h2>Green Steps</h2></center>
       </div>
-        <div class="row">
+      <!-- <div id="progress"></div>
+      <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+      <script>
+        var bar = new ProgressBar.Circle(document.getElementById('progress'), {
+        color: '#aaa',
+        // This has to be the same size as the maximum width to
+        // prevent clipping
+        strokeWidth: 4,
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        text: {
+          autoStyleContainer: false
+        },
+        from: { color: '#aaa', width: 1 },
+        to: { color: '#333', width: 4 },
+        // Set default step function for all animate calls
+        step: function(state, circle) {
+          circle.path.setAttribute('stroke', state.color);
+          circle.path.setAttribute('stroke-width', state.width);
+
+          var value = Math.round(circle.value() * 100);
+          if (value === 0) {
+            circle.text='hwnlo';
+          } else {
+            circle.text = "henlo";
+          }
+
+        }
+      });
+      // bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      // bar.text.style.fontSize = '2rem';
+
+      bar.animate(1.0);  // Number from 0.0 to 1.0
+
+      var div = document.getElementById('progress');
+      div.append(bar);
+      </script> -->
+
+      <div class="card-description">
+        <center>Total buses taken: 20<br></center>
+      </div>
+      <br>
+      <!-- Placeholder for progress -->
+      <div class="row">
           <div class="col-12">
             <div class="card card-chart">
               <div class="card-header ">

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Green Steps
+  </title>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+<script src="signup.js"></script>
+<!-- <script src="add-user.js"></script> -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+            
+        <div style="position: fixed; top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);">
+        <div>
+                <center><h1>Green Steps</h1></center>
+        </div>
+            <center><h2>Sign Up</h2></center>
+                <div class="form-group">
+                    <label>
+                    <input type="text" id="email" placeholder="Email" class="input-group-text">
+                    </label>
+                </div>
+                <div class="form-group">
+                                <label>
+                                <input type="text" id="name" placeholder="Name" class="input-group-text">
+                                </label>
+                </div>
+                <div class="form-group">
+                        <label>
+                        <input type="password" id="password1" placeholder="Password" class="input-group-text">
+                        </label>
+                </div>
+                <div class="form-group">
+                        <label>
+                        <input type="password" id="password2" placeholder="Re-enter password" class="input-group-text">
+                        </label>
+                </div>
+                <div class="form-group">
+                        <label>
+                        <input type="number" id="age" placeholder="Age" min="13" class="input-group-text">
+                        </label>
+                </div>
+                <center>
+                <div class="form-group">
+                        <label>
+                        <input type="submit" id = "sub" onclick="validate()" placeholder="Submit" class="input-group-btn">
+                        </label>
+                </div>
+                <div class="form-group">
+                        <label>
+                        <input type="reset" placeholder="Reset" class="input-group-btn">
+                        </label>
+                </div>
+            </center>
+            <center>
+                    <a href="login.html" class="nav-link">Have an account? Login here!</a>
+            </center>
+        </div>
+    </div>
+</body>
