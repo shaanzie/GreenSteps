@@ -10,7 +10,7 @@
     Green Steps
   </title>
 <style>
-        /* Center the loader */
+        /* Center the loader
         #loader {
           position: absolute;
           left: 50%;
@@ -39,7 +39,7 @@
         }
         
         /* Add animation to "page content" */
-        .animate-bottom {
+        /* .animate-bottom {
           position: relative;
           -webkit-animation-name: animatebottom;
           -webkit-animation-duration: 1s;
@@ -60,7 +60,49 @@
         #wrapper {
           display: none;
           text-align: center;
-        }
+        }  */
+        html,body{
+	background:#000;
+	margin:0;
+}
+.centered{
+	width:400px;
+	height:400px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	background:#000;
+	filter: blur(10px) contrast(20);
+}
+.blob-1,.blob-2{
+	width:70px;
+	height:70px;
+	position:absolute;
+	background:#fff;
+	border-radius:50%;
+	top:50%;left:50%;
+	transform:translate(-50%,-50%);
+}
+.blob-1{
+	left:20%;
+	animation:osc-l 2.5s ease infinite;
+}
+.blob-2{
+	left:80%;
+	animation:osc-r 2.5s ease infinite;
+	background:#0ff;
+}
+@keyframes osc-l{
+	0%{left:20%;}
+	50%{left:50%;}
+	100%{left:20%;}
+}
+@keyframes osc-r{
+	0%{left:80%;}
+	50%{left:50%;}
+	100%{left:80%;}
+}
 </style>
 
 </head>
@@ -72,16 +114,14 @@
     }
     
     function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("wrapper").style.display = "block";
         window.location.href = 'dashboard.html';
     }
 </script>
     
 <body onload="myFunction()" style="margin:0;">
-  <div class="wrapper">
-    <div id="loader"></div>
-    <div id="wrapper"></div>
-  </div>
-</body>
+    <div class = "centered">
+        <div class = "blob-1"></div>
+        <div class = "blob-2"></div>
+      </div>
+  </body>
 </html>
