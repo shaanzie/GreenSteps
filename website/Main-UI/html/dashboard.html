@@ -18,9 +18,8 @@
 <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
-<script src="add-user.js"></script>
-
-<script src="counter.js"></script>
+<script src="../assets/js/add-user.js"></script>
+<script src="../assets/js/counter.js"></script>
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
@@ -30,7 +29,7 @@
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <script src="prof_pic.js"></script>
+  <script src="../assets/js/prof_pic.js"></script>
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
@@ -41,12 +40,7 @@
 
 <body >
     <div class="wrapper " id="wrapper">
-      
     <div class="sidebar">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
-    
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
@@ -115,10 +109,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto ">
-              <!-- <div class="search-bar input-group"> -->
-                <!-- <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i></button> -->
-                <!-- You can choose types of search input -->
-              <!-- </div> -->
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="notification d-none d-lg-block d-xl-block"></div>
@@ -149,9 +139,6 @@
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
                     <a href="user.html" class="nav-item dropdown-item">Profile</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Settings</a>
                   </li>
                   <div class="dropdown-divider"></div>
                   <li class="nav-link">
@@ -226,19 +213,6 @@
                     <h5 class="card-category">Crowd Summary</h5>
                     <h2 class="card-title">Expected crowds for your frequently travelled bus</h2>
                   </div>
-                  <!-- <div class="col-sm-6">
-                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                      <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                        <input type="radio" name="options" autocomplete="off" checked> Accounts
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple " id="1">
-                        <input type="radio" name="options" autocomplete="off"> Purchases
-                      </label>
-                      <label class="btn btn-sm btn-primary btn-simple " id="2">
-                        <input type="radio" name="options" autocomplete="off"> Sessions
-                      </label>
-                    </div>
-                  </div> -->
                 </div>
               </div>
               <div class="card-body">
