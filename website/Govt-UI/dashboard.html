@@ -6,6 +6,11 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <!--   Core JS Files   -->
+      <script src="assets/js/core/jquery.min.js"></script>
+      <script src="assets/js/core/popper.min.js"></script>
+      <script src="assets/js/core/bootstrap.min.js"></script>
+      <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -165,7 +170,7 @@
       </div>
         
           <div class="col-md-6">
-            <div class="fuelCounter" id = "fuelCounter">0</div>
+            <div class="fuelCounter" id = "treeCounter">0</div>
             <br>
             <h1 class="h1" style="color: gray">Feedback requests</h1>
           </div>
@@ -180,7 +185,7 @@
                 <div class="row">
                   <div class="col-sm-6 text-left">
                     <h5 class="card-category">Revenue Generated</h5>
-                    <h2 class="card-title">Average revenue generation per day (Per 1000 INR)</h2>
+                    <h2 class="card-title">Average revenue generation per day (1:1,00,000 scale)</h2>
                   </div>
                   <!-- <div class="col-sm-6">
                     <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
@@ -209,8 +214,11 @@
           <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header ">
-                <h5 class="card-category">Monthly revenue</h5>
-                <h3 class="card-title" id="litres"><i class="tim-icons icon-bell-55 text-primary "></i>INR</h3>
+                <div class="row">
+                <h5 class="card-category col-md-6">Daily Crowd Pattern</h5>
+                <h5 class="card-category col-md-6">Bus: 500D</h5>
+              </div>
+                <h3 class="card-title" id="litres"><i class="tim-icons icon-bell-55 text-primary "></i>Average</h3>
               </div>
               <div class="card-body ">
                 <div class="chart-area">
@@ -222,8 +230,8 @@
           <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header ">
-                <h5 class="card-category">Crowd Patterns</h5>
-                <h3 class="card-title" id="MoneySaved"><i class="tim-icons icon-send text-success "></i>Per 1000</h3>
+                <h5 class="card-category">Average per day revenue for bus: 500D</h5>
+                <h3 class="card-title" id="MoneySaved"><i class="tim-icons icon-send text-success "></i>1:1000 scale</h3>
               </div>
               <div class="card-body ">
                 <div class="chart-area">
@@ -261,11 +269,7 @@
         </ul>
       </div>
     </div>
-    <!--   Core JS Files   -->
-    <script src="assets/js/core/jquery.min.js"></script>
-    <script src="assets/js/core/popper.min.js"></script>
-    <script src="assets/js/core/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+
     <!--  Google Maps Plugin    -->
     <!-- Chart JS -->
     <script src="assets/js/plugins/chartjs.min.js"></script>

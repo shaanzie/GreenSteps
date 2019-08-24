@@ -277,8 +277,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 50,
-            suggestedMax: 125,
+            suggestedMin: 0,
+            suggestedMax: 9,
             padding: 20,
             fontColor: "#9e9e9e"
           }
@@ -326,8 +326,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 120,
+            suggestedMin: 0,
+            suggestedMax: 20,
             padding: 20,
             fontColor: "#9e9e9e"
           }
@@ -350,22 +350,19 @@ demo = {
 
     var db = firebase.firestore();
 
-    var email = window.sessionStorage.getItem('Name');
-    var mon,fuel;
+    var bus = window.sessionStorage.getItem('Bus');
+    var crowd;
 
-    db.collection("Users").where('Email', '==', email).get().then((querySnapshot) => {
+    db.collection("Buses").where('Route', '==', '500D').get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        window.localStorage.setItem("Money",doc.data()['MoneySaved']);
-        window.localStorage.setItem('Fuel',doc.data()['FuelSaved']);
+        window.localStorage.setItem("Crowd",doc.data()['Monday']);
       });
     });
 
-    mon = window.localStorage.getItem('Money').split(',').map(function(item) {
+    crowd = window.localStorage.getItem('Crowd').split(',').map(function(item) {
       return parseInt(item, 10);
     });
-    fuel = window.localStorage.getItem('Fuel').split(',').map(function(item) {
-      return parseInt(item, 10);
-    });
+    
 
     var ctx = document.getElementById("chartLinePurple").getContext("2d");
 
@@ -378,7 +375,7 @@ demo = {
     var data = {
       labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       datasets: [{
-        label: "Fuel Saved",
+        label: "Crowd",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#d048b6',
@@ -392,7 +389,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: fuel,
+        data: crowd,
       }]
     };
 
@@ -415,7 +412,7 @@ demo = {
     var data = {
       labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       datasets: [{
-        label: "Money saved",
+        label: "Average Revenue",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#00d6b4',
@@ -429,7 +426,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: mon,
+        data: [4, 5, 3, 4, 4, 5, 3],
       }]
     };
 
@@ -443,7 +440,7 @@ demo = {
 
 
     var chart_labels = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
-    var chart_data = [170, 170, 150, 180, 180, 160, 175];
+    var chart_data = [4, 5, 4, 3, 4, 5, 4];
 
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
@@ -458,7 +455,7 @@ demo = {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "Crowd",
+          label: "Average revenue in 1,00,000s",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',

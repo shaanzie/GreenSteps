@@ -34,7 +34,7 @@
   text-align: center;
   vertical-align: middle;
 }
-.scoreCounter {
+.scoreCounter{
   display: table-cell;
   /* margin:1.5%; */
   margin: 30px;
