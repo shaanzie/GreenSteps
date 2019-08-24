@@ -11,6 +11,8 @@ var firebaseConfig = {
     // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+localStorage.clear();
+
 var db = firebase.firestore();
 
 String.prototype.hashCode = function() {

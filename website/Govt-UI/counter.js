@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 $('.scoreCounter').each(function() {
   var $this = $(this),
-      countTo = 10456;
+      countTo = 1045;
 
   $({ countNum: $this.text()}).animate({
     countNum: countTo
@@ -26,11 +26,19 @@ $('.scoreCounter').each(function() {
 
 });
 
+var db = firebase.firestore();
+db.collection('Feedback').get().then(snap => {
+  window.localStorage.setItem('size',snap.size);
+});
+
 //End
 
-$('.treeCounter').each(function() {
+var size = parseInt(window.localStorage.getItem('size'));
+
+
+$('.fuelCounter').each(function() {
   var $this = $(this),
-      countTo = 1;
+      countTo = size;
 
   $({ countNum: $this.text()}).animate({
     countNum: countTo

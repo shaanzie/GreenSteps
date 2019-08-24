@@ -3,17 +3,17 @@
 
 <head>
   <meta charset="utf-8" />
-
-<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
-<script src="../assets/js/core/jquery.min.js"></script>
-
   <link rel="apple-touch-icon" sizes="76x76" href="/home/shaanzie/Desktop/COding/GreenSteps/website/logo.png">
   <link rel="icon" type="image/png" href="/home/shaanzie/Desktop/COding/GreenSteps/website/logo.png">
+
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Green Steps
   </title>
+  <script src="add-user.js"></script>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -25,16 +25,11 @@
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-  <script src="add-user.js"></script>
-  <script src="prof_pic.js"></script>
-  <script src="leaderboard.js"></script>
+  <script src="user_prof.js"></script>
 </head>
 
-
-
-<body>
-    
-  <div class="wrapper " id="wrapper">
+<body class=" ">
+  <div class="wrapper ">
     <div class="sidebar">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
@@ -60,24 +55,24 @@
               </a>
             </li>
           <li>
-                <a href="./feedback.html">
-                  <i class="tim-icons icon-satisfied"></i>
-                  <p>Feedback to Government</p>
-                </a>
-            </li>
+              <a href="./feedback.html">
+                <i class="tim-icons icon-satisfied"></i>
+                <p>Feedback to Government</p>
+              </a>
+          </li>
           <li>
             <a href="./user.html">
               <i class="tim-icons icon-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li class="active">
+          <li>
               <a href="./leaderboard.html">
                 <i class="tim-icons icon-chart-bar-32"></i>
                 <p>Leaderboard</p>
               </a>
             </li>
-            <li>
+            <li class="active">
               <a href="./about.html">
                 <i class="tim-icons icon-planet"></i>
                 <p>About Us</p>
@@ -99,7 +94,7 @@
               </button>
             </div>
             
-            <a class="navbar-brand" href="#pablo">Leaderboard</a>
+            <a class="navbar-brand" href="#pablo">User Profile</a>
           </div>
           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,6 +104,28 @@
           </button>
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto ">
+                
+              <div class="search-bar input-group">
+                <!-- <input type="text" class="form-control" placeholder="Search...">
+      <div class="input-group-addon"><i class="tim-icons icon-zoom-split"></i></div> -->
+                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i></button>
+                <!-- You can choose types of search input -->
+              </div>
+              <!-- <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="tim-icons icon-simple-remove"></i>
+          </button>
+        </div>
+
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div> -->
               
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -175,40 +192,57 @@
               <center><img src="/home/shaanzie/Desktop/COding/GreenSteps/website/logo.png" height= '76px' width="76px"/></center>
               <br>
               <center><h2>Green Steps</h2></center>
-              <h1 id="topper"></h1>
           </div>
-            <table id = " leader " class="table" style="color: gray">
-                <thead>
-                    <th>
-                        Country Ranking
-                    </th>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        StepScore
-                    </th>
-                    <th>
-                        City
-                    </th>
-                </thead>
-                <tr id="data" style="display: none">
-                    <td id="slno">
-                        1
-                    </td>
-                    <td id="name">
-                        Ishaan
-                    </td>
-                    <td id="score">
-                        4328
-                    </td>
-                    <td id="city">
-                        Bangalore
-                    </td>
-                </tr>
-            </table>
+          <div class="card-header">
+              <center><h1 class="h1" style="color: aliceblue">About Us</h1></center>
+          </div>
+          <br>
+          <div class="card-group" style="color: antiquewhite">
+                <h2 class="h2" style="color: aliceblue">Our Motivation</h2>
+                <h3>Let’s face it , most of us are willing to spend more than take the public bus for the following reasons:
+                <br>Notion of crowded buses at peak times: The uncertainty of when the next bus will arrive , some are daring enough to hang onto the sides of busses to get to their destination quickly. This paints an unsightly image of wanting to ever set foot into such a situation.
+                <br>No incentives in place : With an ample number of solutions to travel from point A to B , why would anyone opt for using public transport ?
+            </h3>
+            </div>
+          <br>
+          <br>
+          <div class="card-group" style="color: antiquewhite">
+            <h2 class="h2" style="color: aliceblue">What we Offer</h2>
+            <h3>Bus proximity information : Many Govt. sites have been made accessible to the public , but the APIs have been witheld.<br>
+            <br>Estimating the crowd of buses : Utilizing the cameras inside busses and estimating the crowd density of the bus, pushing info to cloud backend 
+            <br>Cost Savings : APIs for Uber, OLA are available to get the required information of the closest cabs/autos and how much it will cost. Green Savings are an index of how much petrol has been saved and how much CO2 emissions have been reduced.
+            <br>Rewards System : Reward each traveller based on the number of kilometers they travel with “mileage coins”. They can later use these to redeem rewards from the various sponsors.
+        </h3>
+          </div>
+    </div>
+    <div class="fixed-plugin">
+      <div class="dropdown show-dropdown">
+        <a href="#" data-toggle="dropdown">
+          <i class="fa fa-cog fa-2x"> </i>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="header-title"> Sidebar Background</li>
+          <li class="adjustments-line">
+            <a href="javascript:void(0)" class="switch-trigger background-color">
+              <div class="badge-colors text-center">
+                <span class="badge filter badge-primary active" data-color="primary"></span>
+                <span class="badge filter badge-blue" data-color="blue"></span>
+                <span class="badge filter badge-green" data-color="green"></span>
+              </div>
+              <div class="clearfix"></div>
+            </a>
+          </li>
+          <li class="adjustments-line text-center color-change">
+            <span class="color-label">LIGHT MODE</span>
+            <span class="badge light-badge mr-2"></span>
+            <span class="badge dark-badge ml-2"></span>
+            <span class="color-label">DARK MODE</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
