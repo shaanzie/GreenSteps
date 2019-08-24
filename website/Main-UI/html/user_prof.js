@@ -22,8 +22,8 @@ querySnapshot.forEach((doc) => {
     img_prof.setAttribute('src', doc.data()['ProfilePicture']);
     name.innerHTML = doc.data()['Name'];
     score.innerHTML = doc.data()['Score'];
-    fuel.innerHTML = doc.data()['FuelSaved'];
-    money.innerHTML = doc.data()['MoneySaved'];
+    fuel.innerHTML = window.localStorage.getItem('FuelSum');
+    money.innerHTML = window.localStorage.getItem('MoneySum');
     console.log(doc.data()['ProfilePicture']);
 });
 });

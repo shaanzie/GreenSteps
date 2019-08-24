@@ -181,23 +181,30 @@
       <br>
       <center>
           <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
           
           <div class="scoreCounter" id = "scoreCounter">0</div>
           <br>
           <h1 class="h1" style="color: gray">Total points</h1>
       </div>
         
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="fuelCounter" id = "fuelCounter">0</div>
             <br>
-            <h1 class="h1" style="color: gray">Fuel saved</h2>
+            <h1 class="h1" style="color: gray">Litres</h1>
+            <h1 class="h1" style="color: gray">Fuel saved</h1>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
       <div class="moneyCounter" id = "moneyCounter">0</div>
       <br>
+      <h1 class="h1" style="color: gray">INR</h1>
       <h1 class="h1" style="color: gray">Money saved</h2>
     </div>
+    <div class="col-md-3">
+        <div class="treeCounter" id = "treeCounter">0</div>
+        <br>
+        <h1 class="h1" style="color: gray">Trees Planted</h2>
+      </div>
       </div>
     </center>
       <br>
@@ -209,7 +216,7 @@
                 <div class="row">
                   <div class="col-sm-6 text-left">
                     <h5 class="card-category">Crowd Summary</h5>
-                    <h2 class="card-title">Expected crowds</h2>
+                    <h2 class="card-title">Expected crowds for your frequently travelled bus</h2>
                   </div>
                   <!-- <div class="col-sm-6">
                     <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
@@ -239,7 +246,7 @@
             <div class="card card-chart">
               <div class="card-header ">
                 <h5 class="card-category">Fuel Saved</h5>
-                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary "></i> 17L</h3>
+                <h3 class="card-title" id="litres"><i class="tim-icons icon-bell-55 text-primary "></i>17L</h3>
               </div>
               <div class="card-body ">
                 <div class="chart-area">
@@ -252,7 +259,7 @@
             <div class="card card-chart">
               <div class="card-header ">
                 <h5 class="card-category">Money Saved</h5>
-                <h3 class="card-title"><i class="tim-icons icon-send text-success "></i>INR</h3>
+                <h3 class="card-title" id="MoneySaved"><i class="tim-icons icon-send text-success "></i>INR</h3>
               </div>
               <div class="card-body ">
                 <div class="chart-area">

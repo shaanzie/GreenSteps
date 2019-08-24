@@ -6,8 +6,6 @@
 
 <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
-
-
 <script src="../assets/js/core/jquery.min.js"></script>
 
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
@@ -28,7 +26,7 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
   <script src="add-user.js"></script>
-  <!-- <script src="prof_pic.js"></script> -->
+  <script src="prof_pic.js"></script>
   <script src="leaderboard.js"></script>
 </head>
 
@@ -95,7 +93,7 @@
               </button>
             </div>
             
-            <a class="navbar-brand" href="#pablo">User Profile</a>
+            <a class="navbar-brand" href="#pablo">Leaderboard</a>
           </div>
           
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,6 +167,7 @@
       <div class="content">
           <div>
               <center><h2>Green Steps</h2></center>
+              <h1 id="topper"></h1>
           </div>
             <table id = " leader " class="table" style="color: gray">
                 <thead>

@@ -67,7 +67,7 @@ demo = {
           left: 0,
           right: 0,
           top: 15,
-          bottom: 15
+          bottom: 15140
         }
       }
     };
@@ -134,7 +134,7 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
+            suggestedMin: 0,
             suggestedMax: 125,
             padding: 20,
             fontColor: "#2380f7"
@@ -181,8 +181,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 0,
+            suggestedMax: 5,
             padding: 20,
             fontColor: "#9a9a9a"
           }
@@ -348,6 +348,25 @@ demo = {
       }
     };
 
+    var db = firebase.firestore();
+
+    var email = window.sessionStorage.getItem('Name');
+    var mon,fuel;
+
+    db.collection("Users").where('Email', '==', email).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        window.localStorage.setItem("Money",doc.data()['MoneySaved']);
+        window.localStorage.setItem('Fuel',doc.data()['FuelSaved']);
+      });
+    });
+
+    mon = window.localStorage.getItem('Money').split(',').map(function(item) {
+      return parseInt(item, 10);
+    });
+    fuel = window.localStorage.getItem('Fuel').split(',').map(function(item) {
+      return parseInt(item, 10);
+    });
+
     var ctx = document.getElementById("chartLinePurple").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -357,9 +376,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       datasets: [{
-        label: "Data",
+        label: "Fuel Saved",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#d048b6',
@@ -373,7 +392,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: fuel,
       }]
     };
 
@@ -392,8 +411,9 @@ demo = {
     gradientStroke.addColorStop(0.4, 'rgba(66,134,121,0.0)'); //green colors
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
+    
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       datasets: [{
         label: "Money saved",
         fill: true,
@@ -409,7 +429,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [250, 270, 340, 300, 260],
+        data: mon,
       }]
     };
 

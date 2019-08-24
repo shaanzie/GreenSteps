@@ -24,5 +24,18 @@ function getroute()
     L.latLng(coords.dest)
     ]
     }).addTo(mymap);
+
+    var db = firebase.firestore();
+    var email = window.localStorage.getItem('Name');
+
+    db.collection("Users").where("Email", "==", email)
+  .get()
+  .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+          console.log(doc.id, " => ", doc.data());
+          // Build doc ref from doc.id
+          db.collection("Users").doc(doc.id).update({TreesPlanted: window.localStorage.getItem('TreesPlanted')+1});
+      });
+ })
 }
 
