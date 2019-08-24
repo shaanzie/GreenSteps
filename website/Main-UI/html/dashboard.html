@@ -3,13 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/home/shaanzie/Desktop/COding/GreenSteps/website/logo.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="counter.js"></script>
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="/home/shaanzie/Desktop/COding/GreenSteps/website/logo.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Green Steps
@@ -21,6 +20,7 @@
 <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
 <script src="add-user.js"></script>
 
+<script src="counter.js"></script>
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
@@ -79,6 +79,12 @@
               <p>User Profile</p>
             </a>
           </li>
+          <li>
+              <a href="./leaderboard.html">
+                <i class="tim-icons icon-chart-bar-32"></i>
+                <p>Leaderboard</p>
+              </a>
+            </li>
         </ul>
       </div>
     </div>
@@ -169,13 +175,40 @@
       <!-- End Navbar -->
       <div class="content">
       <div>
-          <center><h2>Green Steps</h2></center>
+          <center><img src="/home/shaanzie/Desktop/COding/GreenSteps/website/logo.png" height= '76px' width="76px"/></center>
+          <br>
+          <center><h1>Green Steps</h1></center>
       </div>
-      <div class="card-description">
-          <div class="counter" data-count="150">0</div>
-          <div class="counter" data-count="85">0</div>
-          <div class="counter" data-count="2200">0</div>
+      <br>
+      <br>
+      <center>
+          <div class="row">
+      <div class="col-md-3">
+          
+          <div class="scoreCounter" id = "scoreCounter">0</div>
+          <br>
+          <h1 class="h1" style="color: gray">Total points</h1>
       </div>
+        
+          <div class="col-md-3">
+            <div class="fuelCounter" id = "fuelCounter">0</div>
+            <br>
+            <h1 class="h1" style="color: gray">Litres</h1>
+            <h1 class="h1" style="color: gray">Fuel saved</h1>
+          </div>
+          <div class="col-md-3">
+      <div class="moneyCounter" id = "moneyCounter">0</div>
+      <br>
+      <h1 class="h1" style="color: gray">INR</h1>
+      <h1 class="h1" style="color: gray">Money saved</h2>
+    </div>
+    <div class="col-md-3">
+        <div class="treeCounter" id = "treeCounter">0</div>
+        <br>
+        <h1 class="h1" style="color: gray">Trees Planted</h2>
+      </div>
+      </div>
+    </center>
       <br>
       <!-- Placeholder for progress -->
       <div class="row">
@@ -185,7 +218,7 @@
                 <div class="row">
                   <div class="col-sm-6 text-left">
                     <h5 class="card-category">Crowd Summary</h5>
-                    <h2 class="card-title">Expected crowds</h2>
+                    <h2 class="card-title">Expected crowds for your frequently travelled bus</h2>
                   </div>
                   <!-- <div class="col-sm-6">
                     <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
@@ -215,7 +248,7 @@
             <div class="card card-chart">
               <div class="card-header ">
                 <h5 class="card-category">Fuel Saved</h5>
-                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary "></i> 17L</h3>
+                <h3 class="card-title" id="litres"><i class="tim-icons icon-bell-55 text-primary "></i>17L</h3>
               </div>
               <div class="card-body ">
                 <div class="chart-area">
@@ -228,7 +261,7 @@
             <div class="card card-chart">
               <div class="card-header ">
                 <h5 class="card-category">Money Saved</h5>
-                <h3 class="card-title"><i class="tim-icons icon-send text-success "></i>INR</h3>
+                <h3 class="card-title" id="MoneySaved"><i class="tim-icons icon-send text-success "></i>INR</h3>
               </div>
               <div class="card-body ">
                 <div class="chart-area">
@@ -237,10 +270,23 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-4">
+              <div class="card card-chart">
+                <div class="card-header ">
+                  <h5 class="card-category">Advertisement Space</h5>
+                  <h3 class="card-title"><i class="tim-icons icon-send text-success "></i>Dummy Advert</h3>
+                </div>
+                <div class="card-body ">
+                  <div class="chart-area">
+                    <canvas id="chartLineGreen"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       <div class="card">
         <div class="card-block little-profile text-center">
-              <div class="pro-img"><img id = "prof_pic" alt="user" style="margin: 10px"/></div>
+              <div class="pro-img"><img id = "prof_pic" alt="user" style="margin: 10px" class="image-container"/></div>
               <h3 class="m-b-0" id="username"></h3>
               <div class="row text-center m-t-20">
                   <div class="col-lg-4 col-md-4 m-t-20">
