@@ -5,6 +5,11 @@
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Green Steps
@@ -30,7 +35,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="prof_pic.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
 </head>
 
 <body class=" ">
@@ -54,15 +61,15 @@
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
-              <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
+            <a href="./rewards.html">
+              <i class="tim-icons icon-coins"></i>
+              <p>Rewards</p>
             </a>
           </li>
           <li>
               <a href="./feedback.html">
                 <i class="tim-icons icon-satisfied"></i>
-                <p>Feedback to BMTC</p>
+                <p>Feedback to Government</p>
               </a>
           </li>
           <li>
@@ -126,28 +133,19 @@
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Mike John responded to your email</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">You have 5 more tasks</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Your friend Michael is in town</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Another notification</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Another one</a>
-                  </li>
+                    <li class="nav-link">
+                        <a href="#" class="nav-item dropdown-item">50% off on select buses today!</a>
+                      </li>
+                      <li class="nav-link">
+                        <a href="#" class="nav-item dropdown-item">Download the app!</a>
+                      </li>
                 </ul>
               </li>
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="photo">
-                    <img src="../assets/img/anime3.png">
-                  </div>
+                    <div class="photo">
+                        <img id="prof">
+                    </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
                     Log out
@@ -198,23 +196,7 @@
               </div>
               <div class="card-body ">
                   <div id="mapid"></div>
-                  <script>
-                    var mymap = L.map('mapid').setView([13.0288449, 77.5684788], 13);
-                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                    maxZoom: 18,
-                    id: 'mapbox.streets',
-                    accessToken: 'pk.eyJ1Ijoic2hhYW56aWUiLCJhIjoiY2p6ZHZkYzZsMGI4YTNxdWkxN2V0MHFpZCJ9.qlZ4os6Nml1sdBBuYHdTAA'
-                  }).addTo(mymap);
-
-                  L.Routing.control({
-                    waypoints: [
-                      L.latLng(12.9611044,77.5342002),
-                      L.latLng(12.946732,77.5278852),
-                      L.latLng(12.9345,77.5323277)
-                    ]
-                  }).addTo(mymap);
-                </script>
+                  <script src="map.js"></script>
               </div>
             </div>
           </div>
@@ -224,7 +206,21 @@
                   Route Options
               </div>
               <div class="card-body" id='bus'>
-
+                <div class="input-group">
+                  <input type="text" placeholder="Enter Source" class="input-group-text" id="source">
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Destination" class="input-group-text" id="dest">
+                </div>
+                <div class="input-group" style="align-content: center">
+                    <input type="submit" placeholder="Submit" class="input-group-text" id="sub" onclick = "getroute()" style="align-self: center">
+                </div>
+              </div>
+              <div class="card-header">
+                Suggested Routes
+              </div>
+              <div class="card-body">
+                <!-- Display routes here -->
               </div>
             </div>
           </div>

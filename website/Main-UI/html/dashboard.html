@@ -25,6 +25,7 @@
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <script src="prof_pic.js"></script>
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
@@ -56,15 +57,15 @@
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
-              <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
+            <a href="./rewards.html">
+              <i class="tim-icons icon-coins"></i>
+              <p>Rewards</p>
             </a>
           </li>
           <li>
               <a href="./feedback.html">
                 <i class="tim-icons icon-satisfied"></i>
-                <p>Feedback to BMTC</p>
+                <p>Feedback to Government</p>
               </a>
           </li>
           <li>
@@ -97,10 +98,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto ">
-              <div class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i></button>
+              <!-- <div class="search-bar input-group"> -->
+                <!-- <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i></button> -->
                 <!-- You can choose types of search input -->
-              </div>
+              <!-- </div> -->
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="notification d-none d-lg-block d-xl-block"></div>
@@ -111,26 +112,17 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
                   <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Mike John responded to your email</a>
+                    <a href="#" class="nav-item dropdown-item">50% off on select buses today!</a>
                   </li>
                   <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">You have 5 more tasks</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Your friend Michael is in town</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Another notification</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Another one</a>
+                    <a href="#" class="nav-item dropdown-item">Download the app!</a>
                   </li>
                 </ul>
               </li>
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png">
+                    <img id="prof">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
@@ -139,7 +131,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Profile</a>
+                    <a href="user.html" class="nav-item dropdown-item">Profile</a>
                   </li>
                   <li class="nav-link">
                     <a href="#" class="nav-item dropdown-item">Settings</a>
@@ -174,46 +166,8 @@
       <div>
           <center><h2>Green Steps</h2></center>
       </div>
-      <!-- <div id="progress"></div>
-      <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
-      <script>
-        var bar = new ProgressBar.Circle(document.getElementById('progress'), {
-        color: '#aaa',
-        // This has to be the same size as the maximum width to
-        // prevent clipping
-        strokeWidth: 4,
-        trailWidth: 1,
-        easing: 'easeInOut',
-        duration: 1400,
-        text: {
-          autoStyleContainer: false
-        },
-        from: { color: '#aaa', width: 1 },
-        to: { color: '#333', width: 4 },
-        // Set default step function for all animate calls
-        step: function(state, circle) {
-          circle.path.setAttribute('stroke', state.color);
-          circle.path.setAttribute('stroke-width', state.width);
-
-          var value = Math.round(circle.value() * 100);
-          if (value === 0) {
-            circle.text='hwnlo';
-          } else {
-            circle.text = "henlo";
-          }
-
-        }
-      });
-      // bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-      // bar.text.style.fontSize = '2rem';
-
-      bar.animate(1.0);  // Number from 0.0 to 1.0
-
-      var div = document.getElementById('progress');
-      div.append(bar);
-      </script> -->
-
       <div class="card-description">
+        <!-- Add spinner -->
         <center>Total buses taken: 20<br></center>
       </div>
       <br>
@@ -264,19 +218,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header ">
-                <h5 class="card-category">Daily Sales</h5>
-                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info "></i> 3,500€</h3>
-              </div>
-              <div class="card-body ">
-                <div class="chart-area">
-                  <canvas id="CountryChart"></canvas>
-                </div>
-              </div>
-            </div>
-          </div> -->
           <div class="col-lg-4">
             <div class="card card-chart">
               <div class="card-header ">
@@ -291,299 +232,17 @@
             </div>
           </div>
         </div>
-        <!-- <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="card card-tasks">
-              <div class="card-header ">
-                <h6 class="title d-inline">Tasks(5)</h6>
-                <p class="card-category d-inline">today</p>
-                <div class="dropdown">
-                  <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
-                    <i class="tim-icons icon-settings-gear-63"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#pablo">Action</a>
-                    <a class="dropdown-item" href="#pablo">Another action</a>
-                    <a class="dropdown-item" href="#pablo">Something else</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body ">
-                <div class="table-full-width table-responsive">
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="title">Update the Documentation</p>
-                          <p class="text-muted">Dwuamish Head, Seattle, WA 8:47 AM</p>
-                        </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                            <i class="tim-icons icon-pencil"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="" checked="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="title">GDPR Compliance</p>
-                          <p class="text-muted">The GDPR is a regulation that requires businesses to protect the personal data and privacy of Europe citizens for transactions that occur within EU member states.</p>
-                        </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                            <i class="tim-icons icon-pencil"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="title">Solve the issues</p>
-                          <p class="text-muted">Fifty percent of all respondents said they would be more likely to shop at a company </p>
-                        </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                            <i class="tim-icons icon-pencil"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="title">Release v2.0.0</p>
-                          <p class="text-muted">Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM</p>
-                        </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                            <i class="tim-icons icon-pencil"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="title">Export the processed files</p>
-                          <p class="text-muted">The report also shows that consumers will not easily forgive a company once a breach exposing their personal data occurs. </p>
-                        </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                            <i class="tim-icons icon-pencil"></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" value="">
-                              <span class="form-check-sign">
-                                <span class="check"></span>
-                              </span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <p class="title">Arival at export process</p>
-                          <p class="text-muted">Capitol Hill, Seattle, WA 12:34 AM</p>
-                        </td>
-                        <td class="td-actions text-right">
-                          <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
-                            <i class="tim-icons icon-pencil"></i>
-                          </button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <div class="card ">
-              <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table tablesorter " id="">
-                    <thead class=" text-primary">
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Country
-                      </th>
-                      <th>
-                        City
-                      </th>
-                      <th class="text-center">
-                        Salary
-                      </th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          Niger
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td class="text-center">
-                          $36,738
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Minerva Hooper
-                        </td>
-                        <td>
-                          Curaçao
-                        </td>
-                        <td>
-                          Sinaai-Waas
-                        </td>
-                        <td class="text-center">
-                          $23,789
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Sage Rodriguez
-                        </td>
-                        <td>
-                          Netherlands
-                        </td>
-                        <td>
-                          Baileux
-                        </td>
-                        <td class="text-center">
-                          $56,142
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Philip Chaney
-                        </td>
-                        <td>
-                          Korea, South
-                        </td>
-                        <td>
-                          Overland Park
-                        </td>
-                        <td class="text-center">
-                          $38,735
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Doris Greene
-                        </td>
-                        <td>
-                          Malawi
-                        </td>
-                        <td>
-                          Feldkirchen in Kärnten
-                        </td>
-                        <td class="text-center">
-                          $63,542
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Mason Porter
-                        </td>
-                        <td>
-                          Chile
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $78,615
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Jon Porter
-                        </td>
-                        <td>
-                          Portugal
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $98,615
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <div class="card">
         <div class="card-block little-profile text-center">
-              <div class="pro-img"><img src="../assets/img/anime3.png" alt="user" /></div>
-              <h3 class="m-b-0">Angela Dominic</h3>
+              <div class="pro-img"><img id = "prof_pic" alt="user" style="margin: 10px"/></div>
+              <h3 class="m-b-0" id="username"></h3>
               <div class="row text-center m-t-20">
                   <div class="col-lg-4 col-md-4 m-t-20">
-                      <h3 class="m-b-0 font-light">Rides Taken: </h3><h3 id="BusNo"></h3></div>
+                      <h3 class="m-b-0 font-light">Rides Taken</h3><h3 id="BusNo"></h3></div>
                   <div class="col-lg-4 col-md-4 m-t-20">
-                      <h3 class="m-b-0 font-light">Total StepScore: 12</h3></div>
+                      <h3 class="m-b-0 font-light">Total StepScore</h3><h3 id="Score"></h3></div>
                   <div class="col-lg-4 col-md-4 m-t-20">
-                      <h3 class="m-b-0 font-light">Recommendations: 9</h3></div>
+                      <h3 class="m-b-0 font-light">Total Fuel Saved</h3><h3 id="Fuel"></h3></div>
               </div>
           </div>
       </div>
@@ -622,7 +281,6 @@
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
     <!--  Google Maps Plugin    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!-- Chart JS -->
     <script src="../assets/js/plugins/chartjs.min.js"></script>
     <!--  Notifications Plugin    -->

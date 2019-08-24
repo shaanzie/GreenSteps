@@ -5,6 +5,10 @@
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Green Steps
@@ -21,6 +25,7 @@
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <script src="user_prof.js"></script>
 </head>
 
 <body class=" ">
@@ -44,15 +49,15 @@
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
-              <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
+              <a href="./rewards.html">
+                <i class="tim-icons icon-coins"></i>
+                <p>Rewards</p>
+              </a>
+            </li>
           <li>
               <a href="./feedback.html">
                 <i class="tim-icons icon-satisfied"></i>
-                <p>Feedback to BMTC</p>
+                <p>Feedback to Government</p>
               </a>
           </li>
           <li class="active">
@@ -119,27 +124,18 @@
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Mike John responded to your email</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">You have 5 more tasks</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Your friend Michael is in town</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Another notification</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Another one</a>
-                  </li>
+                    <li class="nav-link">
+                        <a href="#" class="nav-item dropdown-item">50% off on select buses today!</a>
+                      </li>
+                      <li class="nav-link">
+                        <a href="#" class="nav-item dropdown-item">Download the app!</a>
+                      </li>
                 </ul>
               </li>
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png">
+                    <img id="prof">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
@@ -264,8 +260,10 @@
                     <div class="block block-three"></div>
                     <div class="block block-four"></div>
                     <a href="#">
-                      <img class="avatar" src="../assets/img/anime6.png" alt="...">
-                      <h5 class="title">Mike Andrew</h5>
+                      <img class="img-raised" id="prof_pic" alt="...">
+                      <br>
+                      <br>
+                      <h5 class="title" id="username"></h5>
                     </a>
                     <p class="description">
                       Member since Feb 2017
@@ -275,17 +273,20 @@
                 <p class="card-description">
                 <ul class="ml-auto">
                   <li class="list-group">
-                    Total points: 20
+                    Total points
+                    <h3 id="Score"></h3>
                   </li>
                   <br>
                   <br>
                   <li class="list-group">
-                      Fuel saved: 17L
+                      Fuel saved
+                      <h3 id = "Fuel"></h3>
                   </li>
                   <br>
                   <br>
                   <li class="list-group">
-                      Money Saved: 6542 INR
+                      Money saved
+                      <h3 id="money"></h3>
                   </li>
                 </ul>
                 </p>
