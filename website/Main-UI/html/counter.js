@@ -126,12 +126,8 @@ $('.fuelCounter').each(function() {
       countNum: countTo
     },
     {
-<<<<<<< HEAD
-      duration: 8000,
-=======
   
       duration: 5000,
->>>>>>> 987b0d94c79c737ddf7e18280d81cc693367a92d
       easing:'linear',
       step: function() {
         $this.text(Math.floor(this.countNum));
@@ -144,12 +140,6 @@ $('.fuelCounter').each(function() {
     });  
     
     
-<<<<<<< HEAD
-  
-  });
-});
-=======
   });
 });
 
->>>>>>> 987b0d94c79c737ddf7e18280d81cc693367a92d
