@@ -41,7 +41,7 @@ describe('gmaps scraper', () => {
         const dist = $("div[class='section-directions-trip-distance section-directions-trip-secondary-text']").getText();
         $("div[aria-label='Transit']").click();
         browser.pause(5000);
-        const routes=$("#section-directions-trip-0");
+        const routes=$("div[class='section-directions-trip-travel-mode-icon transit']");
         routes.click();
         browser.pause(3000);
         $("button[class*='section-schedule-explorer-label']").click();
@@ -60,7 +60,7 @@ describe('gmaps scraper', () => {
             console.log(transit);
             var cost=$("span[class='section-directions-trip-secondary-text']").getText();
             transroute=transit.map(function(step){
-                step=step+"\n";
+                step="Route"+i+":"+step+"\n";
                 return step;
             });
             text[i]=waypoints[0]+"\n"+transroute+waypoints[1]+"\n"+"cost:"+cost+"\n"+"dist:"+dist+"\n";

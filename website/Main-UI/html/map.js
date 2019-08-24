@@ -38,8 +38,40 @@ $.ajax({
   }); 
 }
 function cost(){
-    
+    $.ajax({
+        type: 'GET',
+        url: "http://localhost:5000/api/v1/cost/",
+        success: function(data) {
+          console.log(data);
+          //message box of success here
+          //prettify cost
+          window.localStorage.cost=data;
+        },
+        error: function(data){
+          //popup('false');
+          console.log("failed");
+          //message box of failure here
+        }
+      }); 
 }
+
+function fuel(){
+    $.ajax({
+        type: 'GET',
+        url: "http://localhost:5000/api/v1/fuel",
+        success: function(data) {
+          console.log(data);
+          //message box of success here
+          window.localStorage.fuel=data;
+        },
+        error: function(data){
+          //popup('false');
+          console.log("failed");
+          //message box of failure here
+        }
+      }); 
+}
+
 function getroute()
 {
     foobar();
