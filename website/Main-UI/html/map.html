@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
 <script src="../assets/js/prof_pic.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
@@ -43,9 +44,6 @@
 <body class=" ">
   <div class="wrapper ">
     <div class="sidebar">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li >
@@ -188,8 +186,9 @@
                 Route Preview
               </div>
               <div class="card-body ">
-                  <div id="mapid"></div>
-                  <script src="map.js"></script>
+                  <div id="mapid" class="col-md-10">
+                    <script src="../assets/js/map.js"></script>
+                  </div>
               </div>
             </div>
           </div>
@@ -212,8 +211,10 @@
               <div class="card-header">
                 Suggested Routes
               </div>
-              <div class="card-body" id="routes">
+              <div class="list-group" id="routes">
                 <!-- Display routes here -->
+                <br>
+                <button class="input-group-text" style="display: none; width: 18%" id="opt" onclick="spinner()">Opt this route</button>
               </div>
             </div>
           </div>
@@ -253,8 +254,6 @@
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-    <!--  Google Maps Plugin    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!-- Chart JS -->
     <script src="../assets/js/plugins/chartjs.min.js"></script>
     <!--  Notifications Plugin    -->

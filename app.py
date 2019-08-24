@@ -14,7 +14,7 @@ CORS(app)
 def getroute(source,dest):
     ''' gets route '''
     sourcedest=source+"+"+dest
-    #os.system(r".\\scrapers\\node_modules\\.bin\\wdio .\\scrapers\\wdio.conf.js --suite gmaps "+sourcedest)
+    os.system(r".\\scrapers\\node_modules\\.bin\\wdio .\\scrapers\\wdio.conf.js --suite gmaps "+sourcedest)
     keys=["WALK"]
     step=[]
     semistep=[]
@@ -26,7 +26,7 @@ def getroute(source,dest):
         step.append(coords)
         time=[]
         for line in data:
-            if "WALK" in line:
+            if "Walk" in line:
                 step.append(semistep)
                 semistep=[]
                 semistep.append(line)

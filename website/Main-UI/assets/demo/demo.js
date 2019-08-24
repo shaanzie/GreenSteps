@@ -443,7 +443,7 @@ demo = {
 
 
     var chart_labels = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
-    var chart_data = [170, 170, 150, 180, 180, 160, 175];
+    var chart_data = [70, 70, 60, 56, 74, 45, 55];
 
 
     var ctx = document.getElementById("chartBig1").getContext('2d');

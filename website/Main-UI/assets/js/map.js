@@ -46,6 +46,7 @@ function cost(){
           console.log(data);
           //message box of success here
           //prettify cost
+          document.querySelector(".leaflet-routing-container").style.display = "none";
           window.localStorage.setItem('cost',data);
         },
         error: function(data){
@@ -87,32 +88,29 @@ function getroute()
     }).addTo(mymap);
 }
 
-
-// var routes = document.getElementById('routes');
-// var data = JSON.parse(window.localStorage.getItem('data'));
-// alert(data[5]);
-// routes.innerHTML = "<div class='card-body'>" + data[1] + "</div>";
-
 function createDiv(data)
 {
+  var count = 0;
   console.log(data);
   var routes = document.getElementById('routes');
-  var count = 0;
-  var ctr = 2;
-  // alert(data.length);
+  var btn = document.getElementById('opt');
+  btn.style.display = 'inherit';
   data.forEach(function(step) {
-    if(count >=1 && count < data.length-3){
-    var new_div = document.createElement('div');
-    new_div.style.color = "aliceblue";
-    var hrlines = document.createElement("hr");
-    
-    new_div.textContent=step;
-    if(count%2==0){
-    routes.parentNode.appendChild(hrlines);
-  }
-    routes.parentNode.appendChild(new_div);
-  // routes.appendChild(brk);  
+    if(count >= 1 && count< data.length-3){
+      
+      var new_div = document.createElement('div');
+      new_div.style.color = "aliceblue";
+      var hrlines = document.createElement("hr");
+      new_div.textContent=String(step).split(';')[1];
+      routes.parentNode.appendChild(hrlines);
+      routes.parentNode.appendChild(new_div);
     }
     count++;
+    
   });
+}
+
+function spinner()
+{
+  window.location.href = "/home/shaanzie/Desktop/COding/GreenSteps/website/Main-UI/html/spinner.html";
 }

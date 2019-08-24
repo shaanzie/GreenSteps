@@ -142,5 +142,78 @@ $('.fuelCounter').each(function() {
     
     
   });
+
+  $('.costCounter').each(function() {
+    var $this = $(this),
+        countTo = window.localStorage.cost;
+    
+    $({ countNum: $this.text()}).animate({
+      countNum: countTo
+    },
+  
+    {
+  
+      duration: 5000,
+      easing:'linear',
+      step: function() {
+        $this.text(Math.floor(this.countNum));
+      },
+      complete: function() {
+        $this.text(this.countNum);
+        //alert('finished');
+      }
+  
+    });  
+    
+    
+  });
+  $('.fuelsCounter').each(function() {
+    var $this = $(this),
+        countTo = window.localStorage.fuel*1000;
+    
+    $({ countNum: $this.text()}).animate({
+      countNum: countTo
+    },
+  
+    {
+  
+      duration: 5000,
+      easing:'linear',
+      step: function() {
+        $this.text(Math.floor(this.countNum));
+      },
+      complete: function() {
+        $this.text(this.countNum);
+        //alert('finished');
+      }
+  
+    });  
+    
+    
+  });
+  $('.sCounter').each(function() {
+    var $this = $(this),
+        countTo = window.localStorage.scoreEarned;
+    
+    $({ countNum: $this.text()}).animate({
+      countNum: countTo
+    },
+  
+    {
+  
+      duration: 5000,
+      easing:'linear',
+      step: function() {
+        $this.text(Math.floor(this.countNum));
+      },
+      complete: function() {
+        $this.text(this.countNum);
+        //alert('finished');
+      }
+  
+    });  
+    
+    
+  });
 });
 
