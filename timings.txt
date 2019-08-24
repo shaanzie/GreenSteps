@@ -1,0 +1,57 @@
+12.9344948,77.5323277
+12.9467268,77.5278852
+9:18 PM
+PES University
+Outer Ring Rd, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085
+Walk
+About 6 min , 400 m
+,9:24 PM
+PES College
+201-MHampinagara RPC Layout
+6 min (3 stops)
+9:30 PM
+Nayandahalli Metro
+,Walk
+About 2 min , 160 m
+9:32 PM
+Mysore Road
+Mysore Rd, Muthachari Industrial Estate, Deepanjali Nagar, Bengaluru, Karnataka 560039
+cost:₹10.00
+dist:1.8 km
+,9:20 PM
+PES University
+Outer Ring Rd, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085
+Walk
+About 6 min , 400 m
+,9:26 PM
+PES College
+410Jalahalli Cross
+6 min (3 stops)
+9:32 PM
+Nayandahalli Metro
+,Walk
+About 2 min , 160 m
+9:34 PM
+Mysore Road
+Mysore Rd, Muthachari Industrial Estate, Deepanjali Nagar, Bengaluru, Karnataka 560039
+cost:₹5.00
+dist:1.8 km
+,9:20 PM
+PES University
+Outer Ring Rd, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085
+Walk
+About 6 min , 400 m
+,9:27 PM
+PES College
+501-AHebbala Bridge (Towards Yalahanka)
+5 min (2 stops)
+9:32 PM
+Jn of Nayandahalli
+,Walk
+About 4 min , 350 m
+9:21 PM
+PES University
+Outer Ring Rd, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085
+cost:₹5.00
+dist:1.8 km
+

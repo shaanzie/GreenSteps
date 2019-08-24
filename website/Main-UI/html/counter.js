@@ -1,13 +1,12 @@
-$('.counter').each(function() {
-    var $this = $(this),
-        countTo = $this.attr('data-count');
+$(document).ready(function(){
+  $('.counter').each(function() {
+    var $this = $(this);
+    var countTo = $this.attr('data-count');
     
     $({ countNum: $this.text()}).animate({
       countNum: countTo
     },
-  
     {
-  
       duration: 8000,
       easing:'linear',
       step: function() {
@@ -23,3 +22,4 @@ $('.counter').each(function() {
     
   
   });
+});
