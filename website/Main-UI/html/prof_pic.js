@@ -18,6 +18,7 @@ var buses = document.getElementById('BusNo');
 var score = document.getElementById('Score');
 var fuel = document.getElementById('Fuel');
 var money = document.getElementById('money');
+
 querySnapshot.forEach((doc) => {
     img_prof.setAttribute('src', doc.data()['ProfilePicture']);
     name.innerHTML = doc.data()['Name'];
@@ -25,6 +26,7 @@ querySnapshot.forEach((doc) => {
     score.innerHTML = doc.data()['Score'];
     fuel.innerHTML = doc.data()['FuelSaved'];
     money.innerHTML = doc.data()['MoneySaved'];
+    
     console.log(doc.data()['ProfilePicture']);
 });
 });
