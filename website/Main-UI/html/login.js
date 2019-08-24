@@ -30,10 +30,10 @@ function validate()
 {
     var email = document.getElementById('email').value;
     var pass1 = document.getElementById('password').value;
-    db.collection("Users").where('Password', '==', -(pass1.hashCode())).get()
+    db.collection("Users").where('Email', '==', email).get()
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
-            window.sessionStorage.setItem('Name',name);
+            window.sessionStorage.setItem('Name',email);
             window.location.href = 'loading_page.html';
         })
         .catch(function(error) {
