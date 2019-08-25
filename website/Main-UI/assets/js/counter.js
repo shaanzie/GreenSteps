@@ -193,7 +193,7 @@ $('.fuelCounter').each(function() {
   });
   $('.sCounter').each(function() {
     var $this = $(this),
-        countTo = window.localStorage.scoreEarned;
+        countTo = 12;
     
     $({ countNum: $this.text()}).animate({
       countNum: countTo
